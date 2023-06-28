@@ -11,7 +11,7 @@
 
 
   <!-- css styling -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/css_style/style.css">
   
   <!-- google font family -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;700&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
@@ -43,10 +43,10 @@
     
                     <ul class="navbar-nav ms-auto">
                       <li class="nav-item">
-                        <a class="nav-link" href="/menu.html">Menu</a>
+                        <a class="nav-link" href="/html_eateries/menu.html">Menu</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="/order.html">Order</a>
+                        <a class="nav-link" href="/html_eateries/order.html">Order</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="#reviews">Reviews</a>
@@ -193,12 +193,48 @@
 
     </section>
 
-    <section id="cta" class="bg-red section-padd">
+    <section class="cta" id="cta">
+        <!-- <div class="row"> -->
+            
+            <div class="container">
+                <h1>Get in Touch</h1>
+                <p>Facing an issue? Drop a message</p>
+                <form action="">
+                    <div class="con-row">
+                        <div class="column">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" placeholder="Your Name">
+                        </div>      
+                        <div class="column">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="Your Email">
+                        </div>
+                        
+                    </div>
+                    <div class="con-row">
+                        <div class="column">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" placeholder="Your Subject">
+                        </div>                
+                        <div class="column">
+                        <label for="contact">Contact Number</label>
+                        <input type="tel" id="contac" placeholder="Your Phone Number here">
+                        </div>
+                        
+                    </div>
+                    <div class="con-row">
+                        <div class="column">
+                        <label for="issue">Describe your issue</label>
+                        <textarea placeholder="Describe  your issue here in detail" id="issue" rows="10"></textarea>
+                        </div>
+                        
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
 
-        <h3 class="heading-text end-section text-color">Find the True Love of Your Dog's Life Today.</h3>
-        <button type="button" class="end-button btn btn-dark btn-lg"><i class="fa-brands fa-apple"></i> Download</button>
-        <button type="button" class="end-button btn btn-outline-light btn-lg"><i class="fa-brands fa-google-play"></i> Download</button>
-
+            
+        <!-- </div> -->
     </section>
 
     <footer id="footer">
@@ -209,7 +245,7 @@
         <p>© Copyright 2022TinDog</p>
     
     </footer>
-    <script src="index.js"></script>
+    <script src="/index.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
