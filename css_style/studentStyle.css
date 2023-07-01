@@ -1,22 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;1,200&display=swap');
 
-* {
+*{
+    padding: 0;
     margin: 0;
-    padding: 0; 
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
 
 body{
-    font-family: "Montserrat"; 
-    text-align: center;  
-    
+    background-color: #f3f3f3;
 }
 
-h1, h2, h3, h4, h5, h6{  
+/* h1, h2, h3, h4, h5, h6{  
     font-family: montserrat;
     font-weight: bold;
-}
+} */
 
 .heading-text{
     font-size: 3rem;
@@ -395,4 +393,140 @@ h1, h2, h3, h4, h5, h6{
 
 .footer-icon:hover{
     color: #ff4c68;
+}
+
+/* ----------------MENU PAGE------------------------
+---------------------------------------------------- */
+
+.menu{
+    padding: 0 10px 30px 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: 20px 40px;
+}
+
+.heading{
+    background-color: #cb202d;
+    color: #fff;
+    margin-bottom: 30px;
+    padding: 30px 0;
+    grid-column: 1/-1;
+    text-align: center;
+}
+
+.heading>h1{
+    font-weight: 400;
+    font-size: 30px;
+    letter-spacing: 10px;
+    margin-bottom: 10px;
+}
+
+.heading>h3{
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: 5px;
+}
+
+.food-items{
+    display: grid;
+    position: relative;
+    grid-template-rows: auto 1fr;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.food-items img{
+    position: relative;
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+}
+
+h1{
+    grid-column: 1/-1;
+    text-align: center;
+}
+
+.details{
+    padding: 20px 10px;
+    display: grid;
+    grid-template-rows: auto 1fr 50px;
+    grid-row-gap: 15px;
+}
+
+.details-sub{
+    display: grid;
+    grid-template-columns: auto auto;
+
+}
+
+.details-sub>h5{
+    font-weight: 600;
+    font-size: 23px;
+}
+
+.price{
+    text-align: right;
+}
+
+.details>p{
+    color: #6f6f6f;
+    font-size: 15px;
+    line-height: 28px;
+    font-weight: 400;
+    align-self: stretch;
+}
+
+.cart{
+    font-weight: 600;
+    margin-left: 20px;
+}
+
+.food-items .user_place_order{
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;    
+    padding: 0px;
+}
+
+.food-items .item-actions {
+    text-align: left;
+    margin-top: 5px;
+}
+  
+.quantity {
+    display: inline-block;
+    width: 50px;
+    text-align: center;
+    margin: 0 10px;
+}
+
+.food-cart {
+    margin-top: 20px;
+    /* left: 70%; */
+    border: 5px solid #ccc;
+    padding: 10px;
+}
+  
+.food-cart ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.place-order-btn{
+    background-color: #cb202d;
+    border: none;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600;
+    border-radius: 5px;
+    width: 180px;
+}
+
+.total-amount {
+    position: relative;
+    top: 5px;
+    left: 50%;
+    font-size: 20px;
+    font-weight: bold;
 }

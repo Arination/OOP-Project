@@ -299,12 +299,9 @@ h1, h2, h3, h4, h5, h6{
     text-decoration: underline;
 }
 
-#reviews{
-    background-color: aliceblue;
-    padding: 5% 0;
-    position: relative;
-    z-index: 1;
-}
+/* #reviews{
+    
+} */
 
 .section-padd{
     padding: 5% 15%;
