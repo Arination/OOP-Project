@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css_style/stuMenu.css">
     <title>Order user</title>
 </head>
@@ -14,19 +15,17 @@
             <h3>&mdash; Placed/Past Orders &mdash; </h3>
         </div>
         
-        <div class="food-items">
-            <!-- <img src="/images/userPageImg/soup.jpg" alt="Burger Here" srcset=""> -->
-            <div class="details">
-                <div class="details-sub">
-                    <h5>FOOD ITEM LIST</h5>
-                    <h5 class="price">Total<br>&#8377;8</h5>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto mollitia labore officiis, ipsum aliquam quas explicabo, dignissimos fuga facere modi similique accusamus. Debitis illo et necessitatibus exercitationem! Voluptates, accusantium saepe.</p>
-                <button>Cancel</button>
-            </div>
-        </div>
+        <h2>Food Cart</h2>
+    <div class="food-cart">
+        <ul id="food-cart"></ul>
+        <p class="total-amount">Total Bill: ₹<span id="total-bill">0.00</span></p>
+        <button class="btn btn-primary place-order-btn" onclick="placeOrder()">Place Order</button>
+    </div>
     </div>
 
+    <script src="/JS_files/index1.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 </html>

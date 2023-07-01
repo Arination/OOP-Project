@@ -90,22 +90,15 @@ h1{
     align-self: stretch;
 }
 
-.details>button{
-    background-color: #cb202d;
-    border: none;
-    color: #fff;
-    font-size: 19px;
+.cart{
     font-weight: 600;
-    border-radius: 5px;
-    width: 130px;
-
+    margin-left: 20px;
 }
 
 .food-items .user_place_order{
     text-decoration: none;
     color: #fff;
-    font-size: 20px;
-    
+    font-size: 20px;    
     padding: 0px;
 }
 
@@ -131,6 +124,16 @@ h1{
     list-style-type: none;
     padding: 0;
     margin: 0;
+}
+
+.place-order-btn{
+    background-color: #cb202d;
+    border: none;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600;
+    border-radius: 5px;
+    width: 180px;
 }
 
 .total-amount {
