@@ -116,7 +116,8 @@ h1{
 
 .food-cart {
     margin-top: 20px;
-    border: 1px solid #ccc;
+    /* left: 70%; */
+    border: 5px solid #ccc;
     padding: 10px;
 }
   
@@ -140,6 +141,7 @@ h1{
     position: relative;
     top: 5px;
     left: 50%;
+    font-size: 20px;
     font-weight: bold;
 }
 
