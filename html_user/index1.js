@@ -1,4 +1,18 @@
 var cartItems = {};
+var itemPrices = {
+  'burger': 59,
+  'chilliPotato': 99,
+  'dosa': 89,
+  'noodles': 59,
+  'pizza': 119,
+  'poori': 99,
+  'sandwich': 59,
+  'soup': 89,
+};
+
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 function increaseQuantity(itemId) {
   cartItems[itemId] = (cartItems[itemId] || 0) + 1;
@@ -17,25 +31,24 @@ function decreaseQuantity(itemId) {
 
 function updateCart() {
   var cartList = document.getElementById("food-cart");
+  var totalBill = 0;
   cartList.innerHTML = "";
 
   for (var itemId in cartItems) {
     if (cartItems.hasOwnProperty(itemId)) {
       var listItem = document.createElement("li");
-      listItem.innerText = 'Item ' + itemId + ' - Quantity: ' + cartItems[itemId];
+      listItem.innerText = capitalizeFirstLetter(itemId) + ' - Quantity: ' + cartItems[itemId];
       cartList.appendChild(listItem);
+      totalBill += itemPrices[itemId] * cartItems[itemId];
+
+      // Update quantity display for menu items
+      var quantityDiv = document.getElementById('quantity-' + itemId);
+      quantityDiv.textContent = cartItems[itemId];
     }
   }
 
-  // Update quantity display for menu items
-  for (var i = 1; i <= 30; i++) {
-    var quantityDiv = document.getElementById('quantity-' + i);
-    if (cartItems[i]) {
-      quantityDiv.textContent = cartItems[i];
-    } else {
-      quantityDiv.textContent = '0';
-    }
-  }
+  var totalBillElement = document.getElementById("total-bill");
+  totalBillElement.innerText = totalBill.toFixed(2);
 }
 
 function placeOrder() {
@@ -45,16 +58,30 @@ function placeOrder() {
   }
 
   var orderText = "Order Placed for:\n";
+  var totalBill = 0;
   for (var itemId in cartItems) {
     if (cartItems.hasOwnProperty(itemId)) {
-      orderText += "Item " + itemId + " - Quantity: " + cartItems[itemId] + "\n";
+      orderText += capitalizeFirstLetter(itemId) + " - Quantity: " + cartItems[itemId] + "\n";
+      totalBill += itemPrices[itemId] * cartItems[itemId];
     }
   }
 
-  // Display order details in a popup
-  alert(orderText);
+  // Generate OTP
+  var otp = Math.floor(1000 + Math.random() * 9000);
 
-  // Clear the cart
+  // Display order details and OTP in a popup
+  var orderSummary = orderText + "\nTotal Bill: ₹" + totalBill.toFixed(2) + "\n\nOTP: " + otp;
+  alert("Order Placed!\n\n" + orderSummary);
+
+  // Clear the cart and reset quantity to zero
   cartItems = {};
   updateCart();
+  resetQuantity();
+}
+
+function resetQuantity() {
+  var quantityElements = document.getElementsByClassName("quantity");
+  for (var i = 0; i < quantityElements.length; i++) {
+    quantityElements[i].textContent = '0';
+  }
 }

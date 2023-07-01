@@ -120,3 +120,23 @@ h1{
     text-align: center;
     margin: 0 10px;
 }
+
+.food-cart {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+  
+.food-cart ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.total-amount {
+    position: relative;
+    top: 5px;
+    left: 50%;
+    font-weight: bold;
+}
+
