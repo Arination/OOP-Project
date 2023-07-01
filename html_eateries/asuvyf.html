@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    h2 {
+      font-size: 38px;
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+
+    h4 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .order {
+      margin-bottom: 30px;
+      border: 2px solid #ccc;
+      padding: 20px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .order-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .separator-line {
+      border-top: 1px solid #ccc;
+      margin: 20px 0;
+    }
+  </style>
+  <title>Restaurant Order Page</title>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <!-- Incoming Orders -->
+      <div class="col-md-6">
+        <h2 class="text-center">Incoming Orders</h2>
+        <div class="separator-line"></div>
+
+        <!-- Order 1 -->
+        <div class="order">
+          <div>
+            <div class="order-info">
+              <h4>Order #123</h4>
+              <span>Time: 10:30 AM</span>
+            </div>
+            <p>Customer: John Doe</p>
+            <p>Items: Pizza, Salad, Coke</p>
+          </div>
+          <div class="order-actions">
+            <button class="btn btn-success">Accept</button>
+            <button class="btn btn-danger">Decline</button>
+          </div>
+        </div>
+
+        <!-- Order 2 -->
+        <div class="order">
+          <div>
+            <div class="order-info">
+              <h4>Order #124</h4>
+              <span>Time: 11:00 AM</span>
+            </div>
+            <p>Customer: Jane Smith</p>
+            <p>Items: Burger, Fries, Shake</p>
+          </div>
+          <div class="order-actions">
+            <button class="btn btn-success">Accept</button>
+            <button class="btn btn-danger">Decline</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ongoing/Completed Orders -->
+      <div class="col-md-6">
+        <h2 class="text-center">Ongoing/Completed Orders</h2>
+        <div class="separator-line"></div>
+
+        <!-- Order 3 -->
+        <div class="order">
+          <div>
+            <div class="order-info">
+              <h4>Order #125</h4>
+              <span>Time: 12:30 PM</span>
+            </div>
+            <p>Customer: Mark Johnson</p>
+            <p>Items: Sushi, Miso Soup, Green Tea</p>
+          </div>
+          <div class="order-actions">
+            <div>
+              <span>Cancel in:</span>
+              <span id="cancel-timer-3">03:00</span>
+            </div>
+            <button class="btn btn-primary">Cancel</button>
+            <input type="text" placeholder="Enter OTP">
+            <button class="btn btn-primary">Deliver</button>
+          </div>
+        </div>
+
+        <!-- Order 4 -->
+        <div class="order">
+          <div>
+            <div class="order-info">
+              <h4>Order #126</h4>
+              <span>Time: 1:00 PM</span>
+            </div>
+            <p>Customer: Emily Wilson</p>
+            <p>Items: Pasta, Garlic Bread, Wine</p>
+          </div>
+          <div class="order-actions">
+            <div>
+              <span>Cancel in:</span>
+              <span id="cancel-timer-4">02:30</span>
+            </div>
+            <button class="btn btn-primary">Cancel</button>
+            <input type="text" placeholder="Enter OTP">
+            <button class="btn btn-primary">Deliver</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // Countdown Timer
+    function startTimer(duration, display) {
+      var timer = duration, minutes, seconds;
+      setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+          timer = 0;
+        }
+      }, 1000);
+    }
+
+    var cancelTimer3 = document.getElementById("cancel-timer-3");
+    startTimer(180, cancelTimer3);
+
+    var cancelTimer4 = document.getElementById("cancel-timer-4");
+    startTimer(150, cancelTimer4);
+  </script>
+</body>
+</html>
