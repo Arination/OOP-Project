@@ -108,3 +108,15 @@ h1{
     
     padding: 0px;
 }
+
+.food-items .item-actions {
+    text-align: left;
+    margin-top: 5px;
+}
+  
+.quantity {
+    display: inline-block;
+    width: 50px;
+    text-align: center;
+    margin: 0 10px;
+}
