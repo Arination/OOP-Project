@@ -28,7 +28,7 @@ function updateCart() {
   }
 
   // Update quantity display for menu items
-  for (var i = 1; i <= 2; i++) {
+  for (var i = 1; i <= 30; i++) {
     var quantityDiv = document.getElementById('quantity-' + i);
     if (cartItems[i]) {
       quantityDiv.textContent = cartItems[i];
